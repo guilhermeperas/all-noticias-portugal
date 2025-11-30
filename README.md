@@ -10,15 +10,25 @@
 
 - 📰 Agregação de notícias de múltiplas fontes portuguesas
 
-## Fontes / Sources
-
-- Diário de Notícias
-- *Mais fontes em breve... / More sources coming soon...*
-
 ## Tech Stack
 
 - Python
-- *Em definição... / To be defined...*
+- [Bs4](https://beautiful-soup-4.readthedocs.io/en/latest/) 
+- Flask for front-end
+
+## How to Run
+
+1. Install the dependencies:
+   ```bash
+   pip install flask
+   ```
+
+2. Run the application:
+   ```bash
+   flask --app main run
+   ```
+
+3. Open your browser and navigate to `http://127.0.0.1:5000`
 
 ## Estado / Status
 
