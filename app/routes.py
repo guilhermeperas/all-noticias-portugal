@@ -8,5 +8,5 @@ main = Blueprint("main", __name__)
 
 @main.route("/")
 def index():
-    news = fetch_data()
+    news = fetch_data(1) or {}
     return render_template("index.html", **news)
