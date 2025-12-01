@@ -43,7 +43,12 @@
             "economia": "economia",
             "nacional": "nacional"
         },
-        "data_mapping": {}
+        "data_mapping": {
+            "article_link": "article a",
+            "title": "a span",
+            "img": "picture src",
+            "categoria": ""
+        }
     },
     {
         "nome":"Sic Noticias",

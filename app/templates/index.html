@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Notícias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero__content">
+            <p class="hero__eyebrow">All Notícias</p>
+            <h1>Todas as notícias portuguesas num único lugar</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="news-grid">
+            {% if news %}
+                {% for item in news %}
+                    <article class="news-card">
+                        <div class="news-card__image">
+                            {% if item.img %}
+                                <img src="{{ item.img }}" alt="{{ item.desc or item.title }}">
+                            {% else %}
+                                <div class="placeholder">Sem imagem</div>
+                            {% endif %}
+                        </div>
+                        <div class="news-card__body">
+                            <h2><a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a></h2>
+                            <p>{{ item.desc }}</p>
+                            <a class="news-card__link" href="{{ item.link }}" target="_blank" rel="noopener noreferrer">Ler artigo completo →</a>
+                        </div>
+                    </article>
+                {% endfor %}
+            {% else %}
+                <div class="empty-state">
+                    <h2>Sem resultados</h2>
+                </div>
+            {% endif %}
+        </section>
+
+        <form class="view-more" method="post">
+            <button type="submit" name="action" value="view_more">View more</button>
+        </form>
+    </main>
+
+    <footer class="page-footer">
+        <p>Construído com Flask</p>
+    </footer>
+</body>
+</html>
