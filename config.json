@@ -3,7 +3,7 @@
         "nome":"Diario de Noticias",
         "url": "https://www.dn.pt/api/v1/collections/{category_slug}?item-type=story&limit={count}",
         "type":"json",
-        "categorias:": {
+        "categorias": {
             "principal": "manchete-principal",
             "cultura": "cultura",
             "politica": "politica",
@@ -28,7 +28,7 @@
         "nome":"JN",
         "url":"https://www.jn.pt/{category_slug}?page={page}",
         "type":"html",
-        "categorias:": {
+        "categorias": {
             "principal": "ultimas",
             "cultura": "cultura",
             "politica": "politica",

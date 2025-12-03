@@ -6,14 +6,15 @@ from app.helpers.json_helper import get_nested_value, save_json, load_json
 sites_config = []
 all_news = {}
 
-def fetch_data(page=1):
+def fetch_data(page=1): # TODO, only fetch when requested, cache results for some time, add filters search by site, category, etc
     sites_config = load_json('config.json')
     clean_data = {}
     for site in sites_config: 
         current_site = site['nome']
-        if current_site != "Publico":
+        if current_site != "Diario de Noticias": # temporary just to not request many sites
             continue
         link = site['url'].format(category_slug=site.get('categorias', {}).get('principal',''),page=page,count=10)
+        print(link)
         response = requests.get(link)
 
         if response.status_code != 200:
@@ -46,5 +47,4 @@ def html_to_json(html_content): # TODO needs to be dynamic per website using dat
             'img': img,
             'desc': desc
         })
-        print(news)
     return news
