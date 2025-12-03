@@ -57,13 +57,22 @@
             "economia": "%2Feconomia",
             "nacional": "%2Fpais"
         },
-        "data_mapping": {}
+        "data_mapping": {
+            "container": "contents",
+            "title": "title",
+            "description": "lead",
+            "date": "publishedDate",
+            "img": "picture.urlThumbnail",
+            "categoria": "mainCategory.name",
+            "link": "link",
+            "base_url": "https://sicnoticias.pt"
+        }
     },
     {
         "nome":"Publico",
         "url":"https://www.publico.pt/api/list/{category_slug}?page={page}",
         "type":"json",
-        "categorias:": {
+        "categorias": {
             "principal": "ultimas",
             "cultura": "cultura",
             "politica": "politica",
@@ -72,21 +81,15 @@
             "economia": "economia",
             "nacional": "nacional"
         },
-        "data_mapping": {}
-    },
-      { 
-        "nome":"JM", 
-        "url": "https://www.jm-madeira.pt/news-portlet/html/teaser-viewer-portlet/teaser_page.jsp?portletItem=&refPreferenceId=teaserviewerportlet_WAR_newsportlet_INSTANCE_50e8dc1460354badbe186a27a143570e&portletId=&contentId=null&categoryIds=&date=20251201195301&teasertotalcount=202&firstItem=1&lastItem=51&globalFirstItem=0&globalLastItem=9999&globalLastIndex=2&scopeGroupId=890212192&companyId=10132&languageId=es_ES&plid={category_slug}&sectionPlid={category_slug}&secure=true&userId=10135&lifecycleRender=true&pathFriendlyURLPublic=%2Fweb&pathFriendlyURLPrivateUser=%2Fuser&pathFriendlyURLPrivateGroup=%2Fgroup&serverName=www.jm-madeira.pt&cdnHost=&pathImage=https%3A%2F%2Fwww.jm-madeira.pt%2Fimage&pathMain=%2Fc&pathContext=&urlPortal=https%3A%2F%2Fwww.jm-madeira.pt&pathThemeImages=https%3A%2F%2Fwww.jm-madeira.pt%2Fhtml%2Fthemes%2Fiter_basic%2Fimages&serverPort=80&scheme=http&isMobileRequest=0&includeCurrentContent=true&activeUnrepeatable=false&unrepeatableArticles=",
-        "type":"html",
-        "categorias:": {
-            "principal": "890212478",
-            "cultura": "890212490",
-            "desporto": "890212470",
-            "internacional": "890212486",
-            "economia": "890212482",
-            "nacional": "890212484",
-            "ocorrencias": "890212480"
-        },
-        "data_mapping": {}
+        "data_mapping": {
+            "container": null,
+            "title": "cleanTitle",
+            "description": "descricao",
+            "link": "url",
+            "img": "multimediaPrincipal",
+            "categoria": "rubrica",
+            "date": "data"
+
+        }
     }
 ]

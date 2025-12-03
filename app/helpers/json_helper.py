@@ -1,6 +1,5 @@
 from flask import json
 
-
 def get_nested_value(data, path):
     if not path or not isinstance(path, str): return None
     keys = path.split('.')
@@ -23,18 +22,23 @@ def save_json(data,data_mapping):
 
     container_key = data_mapping.get('container')
     base_img_url = data_mapping.get('base_img_url', "")
-    items_list = data.get(container_key)
+    base_url = data_mapping.get('base_url', "")
 
+    if container_key is None:
+        items_list  = data
+    else:
+        items_list = data.get(container_key)
     for raw_item in items_list:
         clean_item = {}
         for key, path in data_mapping.items():
-            if key in ["container", "base_img_url"]:
+            if key in ["container", "base_img_url", "base_url"]:
                 continue
-
             value = get_nested_value(raw_item, path)
             clean_item[key] = value
         if clean_item.get("img") and base_img_url:
             clean_item["img"] = base_img_url + clean_item["img"]
+        if clean_item.get("link") and not clean_item["link"].startswith("http"):
+            clean_item["link"] = base_url + clean_item["link"]
 
         news.append(clean_item)
     return news

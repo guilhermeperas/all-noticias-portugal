@@ -6,9 +6,12 @@
 
 **All Notícias** is a platform that aggregates news from all major Portuguese media outlets in one website, with advanced filters for easy searching and reading.
 
-## Funcionalidades Planeadas / Planned Features
+## Current News Sources
 
-- 📰 Agregação de notícias de múltiplas fontes portuguesas
+- [Publico](https://www.publico.pt/)
+- [Diario de Noticias](https://www.dn.pt/)
+- [JN](https://www.jn.pt/)
+- [Sic Noticias](https://sicnoticias.pt/)
 
 ## Tech Stack
 
